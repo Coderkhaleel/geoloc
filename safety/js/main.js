@@ -62,7 +62,7 @@ var options = {
 // This example requires the Geometry library. Include the libraries=geometry
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=geometry">
-
+var map
 function initMap(pos) {
     var im = 'images/bluecircle.png';
 	/*$.ajax({url: 'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyCr6Ymf6MEb8c_-QQx5MzAkUuhblQ98AxU',
@@ -79,7 +79,7 @@ function initMap(pos) {
           center: myLatLng,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         }
-        var map = new google.maps.Map(document.getElementById('dvMap'),
+         map = new google.maps.Map(document.getElementById('dvMap'),
                                       mapOptions);
         var userMarker = new google.maps.Marker({
             position: myLatLng,
@@ -121,7 +121,7 @@ var sdb3coords = [
   var sdb3 = new google.maps.Polygon({paths: sdb3coords});
 
   google.maps.event.addDomListener(document.getElementById('showexit'), 'click', function(e) {
-	  if(!google.maps.geometry.poly.containsLocation(myLatLng, sdb1)) {
+	  if(google.maps.geometry.poly.containsLocation(myLatLng, sdb1)) {
 		 showDirection()
 	  } else if (google.maps.geometry.poly.containsLocation(myLatLng, sdb2)) {		 
 		 showDirection()
@@ -135,7 +135,7 @@ var sdb3coords = [
 
 
 function showDirection(end) {	
-    directionsDisplay = new google.maps.DirectionsRenderer();
+    directionsDisplay = new google.maps.DirectionsRenderer({ 'map': map });
     /*var point1 = new google.maps.LatLng(-33.8975098545041, 151.09962701797485);
     var point2 = new google.maps.LatLng(-33.8584421519279, 151.0693073272705);
     var point3 = new google.maps.LatLng(-33.87312358690301, 151.99952697753906);

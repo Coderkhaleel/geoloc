@@ -14,6 +14,14 @@
 	height: 100%;
 	width: 100%;
 	}
+	#alert{
+	color:#fff;
+	float: right;
+    margin: 10px;
+    background: #ce1212;
+    font-size: 20px;
+    padding: 0px 8px 4px 6px;
+    font-weight: bold;}
 	</style>
 </head>
 <body style="font-family: segoe ui;background: #f7f7f7;">
@@ -22,6 +30,7 @@
 <span style="font-size: 18px;font-weight: bold;vertical-align: middle;color: #ABAD25;">| &nbsp; Safety
 </span>
 </span><button id="showexit" style="float: right;margin: 10px;" class="btn btn-success">Show Exit</button>
+<button id="alert" class="btn" onclick="sendAlert()">&#9888;</button>
 </div>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCr6Ymf6MEb8c_-QQx5MzAkUuhblQ98AxU&libraries=geometry"></script>    
 	<div class="container-fluid" style="margin-top:45px;">	

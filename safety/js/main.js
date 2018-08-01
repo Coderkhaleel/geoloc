@@ -127,7 +127,7 @@ var sdb3coords = [
 		 showDirection()
 	  }  else if (google.maps.geometry.poly.containsLocation(myLatLng, sdb3)) {		 
 		 showDirection()
-	  } else {alert('you are outside the campus')}
+	  } else {alert('You are outside the campus')}
  
   });
      
@@ -171,3 +171,5 @@ function deniedPosition(error) {
 	$('#durationDiv').css('display','none');
   
 }
+
+function sendAlert(){alert('Alert Sent!')}
